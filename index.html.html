@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Здоровье+ — частная клиника в Шымкенте</title>
+<meta name="description" content="Частная клиника «Здоровье+»: терапия, педиатрия, УЗИ, лабораторные анализы. Приём по предварительной записи.">
+<meta name="theme-color" content="#2f7f79">
+<link rel="canonical" href="https://zdorovie-plus.example/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f7f79'/%3E%3Cpath d='M26 14h12v12h12v12H38v12H26V38H14V26h12z' fill='%23fff'/%3E%3C/svg%3E">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Здоровье+">
+<meta property="og:title" content="Здоровье+ — частная клиника">
+<meta property="og:description" content="Терапия, педиатрия, УЗИ и лабораторные анализы. Приём по предварительной записи.">
+<meta property="og:url" content="https://zdorovie-plus.example/">
+<meta property="og:image" content="https://zdorovie-plus.example/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Частная клиника «Здоровье+»">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Здоровье+ — частная клиника">
+<meta name="twitter:description" content="Терапия, педиатрия, УЗИ и лабораторные анализы. Приём по предварительной записи.">
+<meta name="twitter:image" content="https://zdorovie-plus.example/og-image.png">
+
+<!-- schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Здоровье+",
+  "url": "https://zdorovie-plus.example/",
+  "image": "https://zdorovie-plus.example/og-image.png",
+  "description": "Частная клиника: терапия, педиатрия, ультразвуковая диагностика и лабораторные анализы.",
+  "telephone": "+77001234567",
+  "email": "info@zdorovie-plus.example",
+  "priceRange": "₸",
+  "isAcceptingNewPatients": true,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Примерная, д. 1",
+    "addressLocality": "Шымкент",
+    "addressCountry": "KZ"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "15:00"
+    }
+  ],
+  "medicalSpecialty": [
+    "https://schema.org/PrimaryCare",
+    "https://schema.org/Pediatric",
+    "https://schema.org/Radiography",
+    "https://schema.org/LaboratoryScience"
+  ],
+  "availableService": [
+    { "@type": "MedicalTherapy", "name": "Приём терапевта" },
+    { "@type": "MedicalProcedure", "name": "Приём педиатра" },
+    { "@type": "MedicalProcedure", "name": "Ультразвуковое исследование" },
+    { "@type": "MedicalTest", "name": "Лабораторные анализы" }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#f6faf9;
+  --surface:#ffffff;
+  --text:#23363a;
+  --muted:#5a6f73;
+  --primary:#2f7f79;
+  --primary-dark:#235f5b;
+  --soft:#e3f1ef;
+  --accent:#e9f3ee;
+  --border:#d5e4e1;
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:19px;
+  line-height:1.65;
+  color:var(--text);
+  background:var(--bg);
+}
+img,svg{max-width:100%}
+a{color:var(--primary-dark)}
+.container{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.25;margin:0 0 .5em;color:#1b2f33}
+h1{font-size:clamp(2rem,5vw,3rem)}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);text-align:center}
+h3{font-size:1.25rem}
+section{padding:64px 0}
+.section-lead{text-align:center;color:var(--muted);max-width:680px;margin:0 auto 36px}
+
+/* Кнопки */
+.btn{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  text-decoration:none;
+  font-size:1.05rem;
+  font-weight:600;
+  padding:14px 28px;
+  border:0;
+  border-radius:999px;
+  cursor:pointer;
+  transition:background .2s;
+  font-family:inherit;
+  text-align:center;
+}
+.btn:hover{background:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--primary-dark);border:2px solid var(--primary)}
+.btn-outline:hover{background:var(--soft)}
+:focus-visible{outline:3px solid #f0b429;outline-offset:3px}
+
+/* Шапка */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(6px);
+}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
+.logo{font-size:1.6rem;font-weight:700;color:var(--primary-dark);text-decoration:none}
+.logo span{color:#d97a5b}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--text);font-size:1rem}
+nav a:hover{color:var(--primary)}
+.header-actions{display:flex;align-items:center;gap:16px}
+.phone{font-weight:700;font-size:1.1rem;text-decoration:none;color:var(--text);white-space:nowrap}
+.header-actions .btn{padding:10px 22px}
+
+/* Бургер */
+.burger{
+  display:none;
+  width:48px;height:48px;
+  border:2px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  cursor:pointer;
+  padding:0;
+  position:relative;
+  flex:none;
+}
+.burger span{
+  position:absolute;left:11px;right:11px;height:3px;border-radius:2px;
+  background:var(--primary-dark);
+  transition:transform .25s,opacity .2s,top .25s;
+}
+.burger span:nth-child(1){top:14px}
+.burger span:nth-child(2){top:21px}
+.burger span:nth-child(3){top:28px}
+.burger[aria-expanded="true"] span:nth-child(1){top:21px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+/* Первый экран */
+.hero{background:linear-gradient(135deg,var(--soft),var(--accent));padding:72px 0}
+.hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:560px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+.hero-card{background:var(--surface);border-radius:var(--radius);padding:28px;border:1px solid var(--border)}
+.hero-card ul{list-style:none;margin:0;padding:0}
+.hero-card li{padding:10px 0 10px 34px;position:relative;border-bottom:1px solid var(--border)}
+.hero-card li:last-child{border:0}
+.hero-card li::before{content:"✓";position:absolute;left:0;top:10px;width:24px;height:24px;border-radius:50%;background:var(--soft);color:var(--primary-dark);text-align:center;font-size:.9rem;line-height:24px;font-weight:700}
+
+/* Карточки */
+.grid{display:grid;gap:22px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px}
+.card p{color:var(--muted);margin:0;font-size:1rem}
+.icon{width:56px;height:56px;border-radius:14px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:16px}
+
+/* Врачи */
+.doctor{text-align:center}
+.avatar{width:110px;height:110px;border-radius:50%;background:var(--soft);color:var(--primary-dark);font-size:2rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:3px solid #fff;box-shadow:0 0 0 2px var(--border)}
+.doctor .role{color:var(--primary-dark);font-weight:600;margin-bottom:10px}
+.doctor p + p{margin-top:8px}
+
+/* Цены */
+.price-wrap{max-width:820px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.price-row{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;border-bottom:1px solid var(--border)}
+.price-row:last-child{border:0}
+.price-row:nth-child(even){background:#fafdfc}
+.price-row strong{white-space:nowrap;color:var(--primary-dark)}
+.note{max-width:820px;margin:16px auto 0;color:var(--muted);font-size:.95rem;text-align:center}
+
+/* Форма */
+#booking{background:var(--soft)}
+form{max-width:700px;margin:0 auto;background:var(--surface);border-radius:var(--radius);padding:32px;border:1px solid var(--border)}
+.field{margin-bottom:20px}
+label{display:block;font-weight:600;margin-bottom:6px}
+input,select,textarea{
+  width:100%;font:inherit;font-size:1.05rem;color:var(--text);
+  padding:13px 14px;border:2px solid var(--border);border-radius:12px;background:#fff;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--primary);outline:none}
+textarea{min-height:100px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:var(--muted)}
+.check input{width:24px;height:24px;margin-top:3px;flex:none}
+.check label{font-weight:400;margin:0}
+.form-msg{margin-top:18px;padding:14px 16px;border-radius:12px;display:none}
+.form-msg.error{display:block;background:#fdecea;color:#8a2a1f}
+.form-msg.ok{display:block;background:#e3f4e8;color:#1f5c33}
+form .btn{width:100%;font-size:1.15rem}
+
+/* Контакты */
+.contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.contact-list{list-style:none;margin:0;padding:0}
+.contact-list li{padding:12px 0;border-bottom:1px solid var(--border)}
+.contact-list li:last-child{border:0}
+.contact-list b{display:block;color:var(--muted);font-weight:600;font-size:.9rem;text-transform:uppercase;letter-spacing:.04em}
+.route{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px}
+.route h3{margin-bottom:.6em}
+.route p{margin:0 0 .8em;color:var(--muted);font-size:1rem}
+
+/* Политика */
+.policy{padding:48px 0 72px}
+.policy .container{max-width:860px}
+.policy h1{font-size:clamp(1.8rem,4vw,2.4rem)}
+.policy h2{text-align:left;font-size:1.35rem;margin-top:1.8em}
+.policy p,.policy li{font-size:1.02rem}
+.policy ul{padding-left:1.3em}
+.policy .updated{color:var(--muted);font-size:.95rem}
+.back{display:inline-block;margin-bottom:20px;font-weight:600}
+
+/* Подвал */
+footer{background:#1f3a3c;color:#cfe0de;padding:36px 0;font-size:.95rem}
+footer a{color:#fff}
+.disclaimer{border:1px solid #3d5c5e;border-radius:12px;padding:14px 18px;margin-bottom:20px;color:#e6f0ef}
+.demo-note{display:inline-block;margin:0 0 14px;padding:6px 14px;border-radius:999px;background:#f0b429;color:#2b2200;font-weight:700;font-size:.95rem}
+.footer-links{margin-top:8px}
+
+/* Адаптивность */
+@media (max-width:980px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .burger{display:block}
+  .header-actions{margin-left:auto}
+  nav{
+    display:none;
+    position:absolute;top:100%;left:0;right:0;
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    box-shadow:0 12px 24px rgba(30,60,60,.08);
+  }
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:8px 20px 16px;max-width:1120px;margin:0 auto}
+  nav li{border-bottom:1px solid var(--border)}
+  nav li:last-child{border:0}
+  nav a{display:block;padding:14px 4px;font-size:1.15rem}
+}
+@media (max-width:720px){
+  body{font-size:18px}
+  section{padding:48px 0}
+  .hero{padding:48px 0}
+  .hero-grid,.contacts-grid,.row{grid-template-columns:1fr}
+  .grid-4,.grid-3{grid-template-columns:1fr}
+  .header-row{flex-wrap:wrap;padding:10px 20px}
+  .logo{order:1}
+  .burger{order:2;margin-left:auto}
+  .header-actions{order:3;width:100%;justify-content:space-between;margin-left:0}
+  .header-actions .btn{flex:1;max-width:220px}
+  form{padding:22px 18px}
+  .price-row{flex-direction:column;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.burger span{transition:none}}
+</style>
+<noscript><style>#privacy[hidden]{display:block}</style></noscript>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <a class="logo" href="#home" aria-label="Здоровье+, на главную">Здоровье<span>+</span></a>
+    <nav id="mainNav" aria-label="Основное меню">
+      <ul>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#doctors">Врачи</a></li>
+        <li><a href="#prices">Цены</a></li>
+        <li><a href="#booking">Запись</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="phone" href="tel:+77001234567">+7 (700) 123-45-67</a>
+      <a class="btn" href="#booking">Записаться</a>
+    </div>
+    <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-controls="mainNav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Частная клиника «Здоровье+»</h1>
+        <p>Приём терапевта и педиатра, ультразвуковая диагностика и лабораторные анализы в одном месте. Спокойная обстановка, внимательное отношение, понятные объяснения.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#booking">Записаться на приём</a>
+          <a class="btn btn-outline" href="#services">Наши услуги</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Коротко о клинике">
+        <ul>
+          <li>Приём по предварительной записи</li>
+          <li>Врачи с профильным образованием</li>
+          <li>Детский и взрослый приём</li>
+          <li>Анализы и УЗИ в одной клинике</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2>Наши услуги</h2>
+      <p class="section-lead">Подходящий формат обследования определяет врач на консультации.</p>
+      <div class="grid grid-4">
+        <article class="card">
+          <div class="icon" aria-hidden="true">🩺</div>
+          <h3>Терапия</h3>
+          <p>Консультация терапевта, осмотр, назначение обследований, профилактические приёмы.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🧸</div>
+          <h3>Педиатрия</h3>
+          <p>Консультации врача-педиатра для детей, осмотры, наблюдение за развитием.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🔍</div>
+          <h3>УЗИ</h3>
+          <p>Ультразвуковая диагностика органов по назначению врача или по вашему обращению.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🧪</div>
+          <h3>Анализы</h3>
+          <p>Забор биоматериала и лабораторные исследования, расшифровку проводит врач.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="doctors" style="background:#fff">
+    <div class="container">
+      <h2>Наши врачи</h2>
+      <p class="section-lead">Специалисты ведут приём по предварительной записи.</p>
+      <div class="grid grid-3">
+        <article class="card doctor">
+          <div class="avatar" aria-hidden="true">АК</div>
+          <h3>Аскарова Динара Маратовна</h3>
+          <div class="role">Врач-терапевт</div>
+          <p>Стаж работы: 14 лет.</p>
+          <p>Высшее медицинское образование, интернатура по терапии, повышение квалификации по внутренним болезням (2024). Первая квалификационная категория.</p>
+        </article>
+        <article class="card doctor">
+          <div class="avatar" aria-hidden="true">СН</div>
+          <h3>Сейтжанов Нурлан Ержанович</h3>
+          <div class="role">Врач-педиатр</div>
+          <p>Стаж работы: 9 лет.</p>
+          <p>Высшее медицинское образование, интернатура по педиатрии, курсы по амбулаторной педиатрии (2023). Вторая квалификационная категория.</p>
+        </article>
+        <article class="card doctor">
+          <div class="avatar" aria-hidden="true">БА</div>
+          <h3>Баймуратова Айгерим Саматовна</h3>
+          <div class="role">Врач ультразвуковой диагностики</div>
+          <p>Стаж работы: 11 лет.</p>
+          <p>Высшее медицинское образование, специализация по ультразвуковой диагностике, сертификат специалиста действует до 2028 года.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices">
+    <div class="container">
+      <h2>Цены</h2>
+      <p class="section-lead">Стоимость основных услуг.</p>
+      <div class="price-wrap" role="table" aria-label="Прайс-лист">
+        <div class="price-row" role="row"><span role="cell">Приём терапевта (первичный)</span><strong role="cell">8 000 ₸</strong></div>
+        <div class="price-row" role="row"><span role="cell">Приём терапевта (повторный)</span><strong role="cell">6 000 ₸</strong></div>
+        <div class="price-row" role="row"><span role="cell">Приём педиатра</span><strong role="cell">7 000 ₸</strong></div>
+        <div class="price-row" role="row"><span role="cell">УЗИ органов брюшной полости</span><strong role="cell">9 500 ₸</strong></div>
+        <div class="price-row" role="row"><span role="cell">Общий анализ крови</span><strong role="cell">2 500 ₸</strong></div>
+        <div class="price-row" role="row"><span role="cell">Забор крови из вены</span><strong role="cell">1 000 ₸</strong></div>
+      </div>
+      <p class="note">Итоговая стоимость определяется после консультации врача. Прайс-лист не является публичной офертой.</p>
+    </div>
+  </section>
+
+  <section id="booking">
+    <div class="container">
+      <h2>Запись на приём</h2>
+      <p class="section-lead">Оставьте данные, и администратор свяжется с вами для подтверждения времени.</p>
+      <form id="bookingForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="name">Ваше имя</label>
+            <input id="name" name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться">
+          </div>
+          <div class="field">
+            <label for="phone">Телефон</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+7 (___) ___-__-__">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="service">Услуга</label>
+            <select id="service" name="service" required>
+              <option value="">Выберите услугу</option>
+              <option>Приём терапевта</option>
+              <option>Приём педиатра</option>
+              <option>УЗИ</option>
+              <option>Анализы</option>
+              <option>Другое / не знаю</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="date">Удобная дата</label>
+            <input id="date" name="date" type="date">
+          </div>
+        </div>
+        <div class="field">
+          <label for="comment">Комментарий (необязательно)</label>
+          <textarea id="comment" name="comment" placeholder="Например, удобное время. Диагнозы и подробности о здоровье здесь указывать не нужно"></textarea>
+        </div>
+        <div class="field check">
+          <input id="consent" type="checkbox" required>
+          <label for="consent">Я согласен(на) на обработку моих персональных данных в соответствии с <a href="#privacy" target="_blank" rel="noopener">Политикой конфиденциальности</a>.</label>
+        </div>
+        <button class="btn" type="submit">Отправить заявку</button>
+        <div id="formMsg" class="form-msg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="container">
+      <h2>Контакты</h2>
+      <div class="contacts-grid">
+        <ul class="contact-list">
+          <li><b>Телефон</b><a href="tel:+77001234567">+7 (700) 123-45-67</a></li>
+          <li><b>Адрес</b>г. Шымкент, ул. Примерная, д. 1</li>
+          <li><b>Режим работы</b>Пн–Пт: 08:00–19:00<br>Сб: 09:00–15:00<br>Вс: выходной</li>
+          <li><b>Эл. почта</b><a href="mailto:info@zdorovie-plus.example">info@zdorovie-plus.example</a></li>
+        </ul>
+        <div class="route">
+          <h3>Как нас найти</h3>
+          <p>Клиника находится на первом этаже, вход со стороны двора. Рядом есть бесплатная парковка.</p>
+          <p>Пожалуйста, приходите за 10 минут до назначенного времени, чтобы спокойно оформить документы.</p>
+          <p>При себе иметь документ, удостоверяющий личность. Для ребёнка — свидетельство о рождении.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main id="privacy" class="policy" hidden>
+  <div class="container">
+    <a class="back" href="#home">← На главную</a>
+    <h1>Политика конфиденциальности</h1>
+    <p class="updated">Дата последнего обновления: 15 октября 2026 г.</p>
+
+    <h2>1. Общие положения</h2>
+    <p>Настоящая политика описывает, как клиника «Здоровье+» (далее — «Клиника») собирает, использует и защищает персональные данные посетителей сайта. Обработка данных осуществляется в соответствии с законодательством Республики Казахстан о персональных данных и их защите.</p>
+
+    <h2>2. Какие данные мы собираем</h2>
+    <p>Через форму записи на приём мы получаем только те сведения, которые вы указываете сами:</p>
+    <ul>
+      <li>имя;</li>
+      <li>номер телефона;</li>
+      <li>выбранная услуга и удобная дата;</li>
+      <li>текст комментария, если вы его оставили.</li>
+    </ul>
+    <p>Просим не указывать в комментарии диагнозы, результаты обследований и другие сведения о состоянии здоровья. Эти вопросы обсуждаются на приёме у врача.</p>
+
+    <h2>3. Цели обработки</h2>
+    <ul>
+      <li>связаться с вами для подтверждения записи на приём;</li>
+      <li>организовать приём у выбранного специалиста;</li>
+      <li>ответить на ваши вопросы о работе Клиники.</li>
+    </ul>
+    <p>Мы не используем ваши данные для рекламных рассылок без отдельного согласия.</p>
+
+    <h2>4. Основание для обработки</h2>
+    <p>Данные обрабатываются на основании вашего согласия, которое вы подтверждаете, отметив соответствующий флажок в форме записи.</p>
+
+    <h2>5. Хранение и защита</h2>
+    <p>Мы храним данные только в течение срока, необходимого для достижения целей обработки, после чего удаляем или обезличиваем их. Доступ к данным имеют только сотрудники, которым он необходим для работы. Мы принимаем организационные и технические меры, чтобы защитить данные от утраты, неправомерного доступа и распространения.</p>
+
+    <h2>6. Передача третьим лицам</h2>
+    <p>Мы не продаём и не передаём ваши персональные данные третьим лицам, за исключением случаев, прямо предусмотренных законодательством.</p>
+
+    <h2>7. Файлы cookie</h2>
+    <p>Сайт не использует cookie для отслеживания пользователей и не подключает рекламные или аналитические сервисы третьих сторон.</p>
+
+    <h2>8. Ваши права</h2>
+    <p>Вы вправе:</p>
+    <ul>
+      <li>узнать, какие ваши данные обрабатываются;</li>
+      <li>потребовать уточнения, блокирования или удаления данных;</li>
+      <li>отозвать согласие на обработку, направив обращение по адресу, указанному ниже.</li>
+    </ul>
+
+    <h2>9. Контакты</h2>
+    <p>По вопросам обработки персональных данных пишите на <a href="mailto:info@zdorovie-plus.example">info@zdorovie-plus.example</a> или звоните по телефону <a href="tel:+77001234567">+7 (700) 123-45-67</a>.</p>
+
+    <h2>10. Изменения политики</h2>
+    <p>Актуальная версия политики всегда размещена на этой странице. Дата последнего обновления указана в начале документа.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p class="demo-note">Демонстрационный проект: клиника вымышленная</p>
+    <div class="disclaimer">
+      Имеются противопоказания. Необходима консультация специалиста. Информация на сайте носит справочный характер и не заменяет приём врача.
+    </div>
+    <div>© <span id="year">2026</span> Клиника «Здоровье+». Лицензия на медицинскую деятельность № ХХХХХ (образец).</div>
+    <div class="footer-links"><a href="#privacy">Политика конфиденциальности</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var home = document.getElementById("home");
+  var priv = document.getElementById("privacy");
+  var baseTitle = document.title;
+  var nav = document.getElementById("mainNav");
+  var burger = document.getElementById("burger");
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* Меню-бургер */
+  function setMenu(open){
+    nav.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+  }
+  burger.addEventListener("click", function(){
+    setMenu(!nav.classList.contains("open"));
+  });
+  nav.addEventListener("click", function(e){
+    if (e.target.closest("a")) setMenu(false);
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && nav.classList.contains("open")) {
+      setMenu(false);
+      burger.focus();
+    }
+  });
+  document.addEventListener("click", function(e){
+    if (nav.classList.contains("open") && !e.target.closest("header")) setMenu(false);
+  });
+  window.addEventListener("resize", function(){
+    if (window.innerWidth > 980) setMenu(false);
+  });
+
+  /* Переключение «главная / политика» */
+  function route(){
+    var h = location.hash;
+    if (h === "#privacy") {
+      home.hidden = true;
+      priv.hidden = false;
+      document.title = "Политика конфиденциальности — Здоровье+";
+      window.scrollTo(0, 0);
+    } else {
+      var wasHidden = home.hidden;
+      home.hidden = false;
+      priv.hidden = true;
+      document.title = baseTitle;
+      if (wasHidden) {
+        var el = h.length > 1 ? document.getElementById(h.slice(1)) : null;
+        if (el) el.scrollIntoView(); else window.scrollTo(0, 0);
+      }
+    }
+  }
+  window.addEventListener("hashchange", route);
+  route();
+
+  /* Форма записи */
+  var dateInput = document.getElementById("date");
+  dateInput.min = new Date().toISOString().split("T")[0];
+
+  var form = document.getElementById("bookingForm");
+  var msg = document.getElementById("formMsg");
+
+  function show(type, text){
+    msg.className = "form-msg " + type;
+    msg.textContent = text;
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = form.name.value.trim();
+    var digits = form.phone.value.replace(/\D/g, "");
+
+    if (!name) { show("error", "Пожалуйста, укажите имя."); form.name.focus(); return; }
+    if (digits.length < 10) { show("error", "Проверьте номер телефона."); form.phone.focus(); return; }
+    if (!form.service.value) { show("error", "Выберите услугу."); form.service.focus(); return; }
+    if (!document.getElementById("consent").checked) { show("error", "Нужно согласие на обработку персональных данных."); return; }
+
+    show("ok", "Спасибо, " + name + "! Заявка принята. Администратор свяжется с вами для подтверждения времени.");
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>
